@@ -134,6 +134,7 @@ class Interface {
                 }
             });
         });
+        this.erro = false;
     }
 
     processarLetraTeste(letra) {

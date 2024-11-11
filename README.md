@@ -1,2 +1,2 @@
-# Aut-mato-Finito-Determin-stico
-Autômato Finito Determinístico
+# Automato Finito Deterministico
+## Autores Bruno F e Marcio L

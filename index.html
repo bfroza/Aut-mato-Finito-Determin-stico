@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Autômato Finito Determinístico</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+
+<body>
+    <div class="input-group">
+        <button onclick="exibirInputAlfabeto()">Modificar Alfabeto</button>
+        <div id="alfabeto-input-container" style="display: none;">
+            <input type="text" id="alfabeto-input" placeholder="Digite o novo alfabeto (ex: abcdef)">
+            <button onclick="alfabetoPadrao()">Padrão</button>
+            <button onclick="atualizarAlfabeto()">Confirmar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Autômato Finito Determinístico</h1>
+
+
+        <div class="input-group">
+            <input type="text" id="palavra-input" placeholder="Digite uma sentença para aceitar">
+            <button onclick="adicionarPalavra()">Adicionar</button>
+            <button onclick="gerarPalavraAleatoria()">Aleatória</button>
+            <div id="alfabeto-input-container" style="display: none;">
+                <input type="text" id="alfabeto-input" placeholder="Digite o novo alfabeto (ex: abcdef)">
+                <button onclick="alfabetoPadrao()">Padrão</button>
+                <button onclick="atualizarAlfabeto()">Confirmar</button>
+            </div>
+        </div>
+
+        <div class="palavras-section">
+            <h3>Palavras Aceitas:</h3>
+            <div id="palavras-aceitas" class="palavras-list"></div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="teste-input" placeholder="Digite uma sentença para testar">
+            <button onclick="testarPalavra()">Testar</button>
+        </div>
+
+        <div class="palavras-section">
+            <h3>Palavras Reconhecidas:</h3>
+            <div id="palavras-reconhecidas" class="palavras-list"></div>
+        </div>
+
+        <div class="palavras-section">
+            <h3>Palavras Não Reconhecidas:</h3>
+            <div id="palavras-nao-reconhecidas" class="palavras-list"></div>
+        </div>
+
+        <div class="tabela-container">
+            <h3>Tabela de Transições:</h3>
+            <table id="tabela-transicoes"></table>
+        </div>
+    </div>
+
+    <script src="src/js/automato.js"></script>
+    <script src="src/js/interface.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>

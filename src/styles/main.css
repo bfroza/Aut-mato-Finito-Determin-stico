@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.palavras-section {
+    margin-bottom: 20px;
+}
+
+.palavras-section h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.palavras-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.palavra-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.palavra-aceita {
+    background-color: #e3f2fd;
+}
+
+.palavra-reconhecida {
+    background-color: #c8e6c9;
+}
+
+.palavra-nao-reconhecida {
+    background-color: #ffcdd2;
+}
+
+.tabela-container {
+    overflow-x: auto;
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    min-width: 40px;
+    transition: background-color 0.3s ease;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.estado-final {
+    font-weight: bold;
+}
+
+.estado-final::after {
+    content: '*';
+    color: #007bff;
+}
+
+.celula-atual {
+    background-color: #4CAF50 !important; /* Verde mais escuro */
+    color: white !important;
+    transition: background-color 0.3s ease;
+}
+
+
+.celula-atual {
+    background-color: #4CAF50 !important; /* Verde */
+    color: white !important;
+}
+
+.celula-percorrida {
+    background-color: #bbf0bd !important; /* Verde claro */
+    transition: background-color 0.3s ease;
+}
+
+.estado-futuro {
+    background-color: #08218d !important; /* Verde */
+    color: white !important;
+}
+
+.celula-invalida {
+    background-color: #ffcdd2 !important; /* Vermelho claro */
+    transition: background-color 0.3s ease;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    min-width: 40px;
+    transition: all 0.3s ease;
+}
+
+.previous-state {
+    background-color: lightblue; /* Cor para as células anteriores */
+}

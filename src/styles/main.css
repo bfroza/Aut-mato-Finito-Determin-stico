@@ -115,7 +115,7 @@ th {
     font-weight: bold;
 }
 
-.estado-final::after {
+.estado-final::before {
     content: '*';
     color: #007bff;
 }

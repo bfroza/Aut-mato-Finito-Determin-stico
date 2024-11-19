@@ -50,8 +50,7 @@ class Interface {
         const container = document.getElementById('palavras-aceitas');
         container.innerHTML = '';
         this.palavrasAceitas.forEach(palavra => {
-            const span = document.createElement('span');
-            span.textContent = palavra;
+            const span = this.criarElemento('span', palavra);
             span.classList.add('palavra-item', 'palavra-aceita');
             container.appendChild(span);
         });

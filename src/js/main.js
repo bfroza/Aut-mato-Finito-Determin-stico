@@ -3,9 +3,9 @@ const interface = new Interface(automato);
 
 function adicionarPalavra(palavra) {
     const input = document.getElementById('palavra-input');
-    if (!palavra || interface.palavrasAceitas.includes(palavra)) {
-        palavra = input.value.toLowerCase().trim();
-    } 
+    if (!palavra) {
+        palavra = input.value.toLowerCase();
+    }
 
     if (!palavra || interface.palavrasAceitas.includes(palavra)) {
         return;
@@ -36,7 +36,7 @@ function gerarPalavraAleatoria() {
 
 function testarPalavra() {
     const input = document.getElementById('teste-input');
-    const palavra = input.value.toLowerCase().trim();
+    const palavra = input.value.toLowerCase();
 
     if (!palavra) return;
 
@@ -61,7 +61,7 @@ function testarPalavra() {
 
     input.value = '';
     interface.atualizarPalavrasReconhecidas();
-    interface.limparDestaquesTabela();
+    // interface.limparDestaquesTabela();
 }
 
 function exibirInputAlfabeto() {
@@ -87,6 +87,12 @@ function alfabetoPadrao() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
+    const alfabetoSalvo = JSON.parse(localStorage.getItem('automatoAlfabeto'));
+    if (alfabetoSalvo) {
+        automato.alfabeto = alfabetoSalvo;
+    }
+    interface.atualizarTabelaTransicoes();
+
     document.getElementById('palavra-input').addEventListener('keydown', (e) => {
         if (e.code === 'Space') {
             e.preventDefault();
@@ -106,11 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             testarPalavra();
         }
-    });
 
-    document.getElementById('teste-input').addEventListener('keydown', (e) => {
         if (e.code === 'Backspace') {
-            // interface.erro = false;
             interface.celulasPercorridas.pop();
             const ultimoValor = interface.celulasPercorridas.pop();
             if (ultimoValor) {
@@ -121,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 interface.limparDestaquesTabela();
             }
         }
-    });
+    });   
 
     document.getElementById('teste-input').addEventListener('input', (e) => {
         const letra = e.target.value.slice(-1).toLowerCase();
@@ -136,11 +139,3 @@ document.addEventListener('DOMContentLoaded', () => {
     interface.atualizarTabelaTransicoes();
 });
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const alfabetoSalvo = JSON.parse(localStorage.getItem('automatoAlfabeto'));
-    if (alfabetoSalvo) {
-        automato.alfabeto = alfabetoSalvo;
-    }
-    interface.atualizarTabelaTransicoes();  // Atualiza a tabela com o alfabeto carregado
-});
